@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Storage Inspection Form</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Material Storage Inspection Form</h1>
+
+        <form id="inspectionForm">
+
+            <div class="form-group">
+                <label>Site Incharge Name</label>
+                <input type="text" id="site_incharge_name" placeholder="Enter Site Incharge Name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Project Name</label>
+                <input type="tel" id="project_name" placeholder="Enter Project Name" required>
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Key Information</th>
+                        <th>Status</th>
+                        <th>Qty / Measurement</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Adequate open area for material storage is available.</td>
+                        <td>
+                            <select id="adequate_open_area_for_material_storage_is_available" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+                        <td rowspan="4">
+                            <input type="text" id="open_area_size" placeholder="Open Area Size" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1.1</td>
+                        <td>Whether area is barricaded and secure or not.</td>
+                        <td>
+                            <select id="whether_the_area_is_barricaded_and_secure_or_not" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1.2</td>
+                        <td>Approach for machinery movement is available or not.</td>
+                        <td>
+                            <select id="approach_for_machinery_movement_is_available_or_not" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1.3</td>
+                        <td>Area is above to avoid water logging.</td>
+                        <td>
+                            <select id="area_is_elevated_to_avoid_water_logging" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Adequate closed store is available.</td>
+                        <td>
+                            <select id="adequate_closed_store_is_available" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+
+                        <td rowspan="2">
+                            <input type="text" id="closed_store_size" placeholder="Closed Store Size" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2.1</td>
+                        <td>Rack are provided for material segregation.</td>
+                        <td>
+                            <select id="racks_are_provided_for_material_segregation" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                    <td>3</td>
+
+                    <td>
+                        <strong>Security Guard</strong><br>
+                        Security guard deputed.
+                    </td>
+
+                    <td>
+                        <select id="security_guard">
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </td>
+
+                    <td>
+                        <input type="text" id="no_of_guards_agency_details" placeholder="No. of Guards / Agency Detail">
+                    </td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+
+                        <td>
+                            <strong>Material Issue Slip</strong><br>
+                            Material Issue Slip being maintained.
+                        </td>
+
+                        <td>
+                            <select id="material_issue_slip">
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+
+                        <td>
+
+                            <input type="text" id="latest_issue_slip_no_and_attached_copy"
+                                placeholder="Inform Latest issue slip No and attach copy" required>
+
+                            <br><br>
+
+                            <input type="file" id="issue_slip_attachment" accept=".pdf,.jpg,.jpeg,.png">
+                            <small style="color: red; font-weight: bold;">
+                                Note: Only files up to 3 MB can be uploaded.
+                            </small>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <button type="submit" class="submit-btn">
+                Submit Inspection
+            </button>
+
+        </form>
+
+    </div>
+
+    <script src="./js/form.js"></script>
+
+</body>
+
+</html>

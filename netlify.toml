@@ -1,0 +1,5 @@
+[[redirects]]
+from = "/api/*"
+to = "https://material-inspection-portal-backend1.vercel.app/api/:splat"
+status = 200
+force = true

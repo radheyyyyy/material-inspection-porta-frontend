@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Admin Portal</h1>
+
+        <div id="loginSection">
+
+            <h2>Admin Login</h2>
+
+            <input type="text" id="username" placeholder="Enter Username">
+
+            <input type="password" id="password" placeholder="Enter Password">
+
+            <button onclick="login()">
+                Login
+            </button>
+
+        </div>
+
+        <div id="adminPanel" style="display:none;">
+
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+                <h2>Inspection Entries</h2>
+
+                <button onclick="logout()" class="logout-btn">
+                    Logout
+                </button>
+            </div>
+
+            <div id="inspectionContainer"></div>
+
+        </div>
+
+    </div>
+
+    <script src="./js/admin.js"></script>
+
+</body>
+
+</html>
