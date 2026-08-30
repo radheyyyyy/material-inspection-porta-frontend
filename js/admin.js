@@ -59,6 +59,8 @@ async function loadData() {
     const result =
       await response.json();
 
+    window.inspectionsData = result.data;
+
     const container =
       document.getElementById(
         "inspectionContainer"
@@ -261,3 +263,35 @@ function logout() {
 
   location.reload();
 }
+
+function downloadCSV() {
+  if (!window.inspectionsData || window.inspectionsData.length === 0) {
+    alert('No data available to download');
+    return;
+  }
+
+  const headers = Object.keys(window.inspectionsData[0]);
+  const csvRows = [];
+
+  csvRows.push(headers.join(','));
+
+  for (const row of window.inspectionsData) {
+    const values = headers.map(header => {
+      const escape = ('' + (row[header] || '')).replace(/"/g, '""');
+      return `"${escape}"`;
+    });
+    csvRows.push(values.join(','));
+  }
+
+  const csvData = csvRows.join('\n');
+  const blob = new Blob([csvData], { type: 'text/csv' });
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.setAttribute('hidden', '');
+  a.setAttribute('href', url);
+  a.setAttribute('download', 'inspections_data.csv');
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
